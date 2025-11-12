@@ -1,18 +1,41 @@
 "use client";
+import { useDate } from "./DateContext";
 
 export default function CenterRule() {
+  const { dates } = useDate();
+
   return (
-    <div className="relative flex flex-col items-center justify-center w-[1px] h-64 lg:h-full bg-transparent">
-      {/* Ligne pointillée */}
-      <div className="absolute h-full w-[0.25px] border-1 border-dashed border-sky-800 opacity-20" />
-
-      {/* Lueur centrale */}
-      <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-[2px] h-14 bg-sky-200 rounded-full shadow-[0_0_8px_2px_rgba(56,189,248,0.5)]" />
-
-      {/* Date au centre */}
-      <span className="absolute top-1/2 transform -translate-y-1/2 translate-x-5 text-xs text-gray-400 whitespace-nowrap">
-        Nov 9, 2025
-      </span>
+    <div className="relative w-full h-full">
+      {/* Ligne pointillée centrale */}
+      <div className="absolute left-1/2 inset-y-0 border-l border-dashed border-gray-700" />
+      
+      {/* 📅 Affichage des dates au niveau des images */}
+      {dates.map(({ date, top }, i) => (
+        <div
+          key={i}
+          className="absolute left-1/2 -translate-x-1/2 whitespace-nowrap text-sm text-gray-500 font-medium"
+          style={{ top: `${top - 12}px` }}
+        >
+          {date}
+        </div>
+      ))}
     </div>
   );
 }
+
+
+
+
+// "use client";
+
+// export default function CenterRule() {
+//   return (
+//     <div className="relative flex flex-col items-center w-[1px] bg-transparent">
+//       {/* Ligne pointillée */}
+//       <div className="absolute inset-y-0 w-[1px] border-l border-dashed border-sky-900 opacity-60" />
+
+//       {/* Lueur centrale */}
+//       <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[2px] h-14 bg-sky-200 rounded-full shadow-[0_0_8px_2px_rgba(56,189,248,0.5)]" />
+//     </div>
+//   );
+// }
