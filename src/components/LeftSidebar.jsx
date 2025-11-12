@@ -6,11 +6,11 @@ import { BookOpen, Github } from "lucide-react";
 
 export default function LeftSidebar() {
   return (
-    <div className="relative h-full flex flex-col justify-center px-16 text-white overflow-hidden bg-[#020817]">
-      {/* 🔵 EFFET DE PROJECTION BLEUE sur le côté droit */}
+    <div className="relative h-full flex flex-col justify-between items-center px-8 md:px-16 py-12 text-white overflow-hidden bg-[#020817]">
+      {/* Effet bleu */}
       <div className="absolute top-0 right-0 w-96 h-full bg-gradient-to-l from-blue-500/15 via-blue-600/8 to-transparent pointer-events-none z-[1]" />
-      
-      {/* Fond étoiles statique */}
+
+      {/* Fond étoiles */}
       <div className="absolute inset-0 z-0">
         <svg
           viewBox="0 0 800 600"
@@ -27,7 +27,6 @@ export default function LeftSidebar() {
               opacity={Math.random() * 0.9 + 0.1}
             />
           ))}
-          {/* Lignes de constellation */}
           <line x1="150" y1="80" x2="200" y2="120" stroke="#5bb5ff" strokeWidth="0.4" />
           <line x1="200" y1="120" x2="230" y2="90" stroke="#5bb5ff" strokeWidth="0.4" />
           <line x1="350" y1="300" x2="400" y2="340" stroke="#5bb5ff" strokeWidth="0.4" />
@@ -35,10 +34,10 @@ export default function LeftSidebar() {
         </svg>
       </div>
 
-      {/* Contenu principal */}
-      <div className="relative z-10 space-y-6">
-        {/* Logo et nom cliquables */}
-        <Link href="/" className="flex items-center space-x-2 hover:opacity-90 transition">
+      {/* Partie supérieure */}
+      <div className="relative z-10 space-y-10 w-full max-w-md text-center md:text-left">
+        {/* Logo et nom */}
+        <Link href="/" className="flex items-center space-x-2 hover:opacity-90 transition justify-center md:justify-start">
           <div className="bg-white text-black rounded-md px-2 py-1 shadow flex items-center justify-center">
             <Image
               src="/Images/icon.svg"
@@ -48,12 +47,12 @@ export default function LeftSidebar() {
               className="object-contain"
             />
           </div>
-          <h1 className="text-2xl font-bold tracking-tight">Square UI</h1>
+          <h1 className="text-4xl font-bold tracking-tight">Square UI</h1>
         </Link>
 
-        {/* Titre principal avec lien souligné */}
-        <div>
-          <h2 className="text-4xl font-light leading-snug mb-3">
+        {/* Sous-titre et description */}
+        <div className="mt-4">
+          <h2 className="text-3xl font-light leading-snug mb-4">
             Open-source layouts <br />
             by{" "}
             <a
@@ -67,12 +66,12 @@ export default function LeftSidebar() {
           </h2>
 
           <p className="text-gray-400 max-w-md mb-8">
-            Collection of beautifully crafted open-source layouts UI built with
-            shadcn/ui.
+            Collection of beautifully crafted open-source layouts UI built with shadcn/ui.
           </p>
         </div>
 
-        <div className="flex items-center space-x-6 text-gray-300">
+        {/* Liens sociaux */}
+        <div className="flex items-center justify-center md:justify-start space-x-6 text-gray-300">
           <a
             href="https://github.com/sponsors/indev-ui"
             target="_blank"
@@ -95,9 +94,16 @@ export default function LeftSidebar() {
         </div>
       </div>
 
+      {/* 👇 Menu de navigation au centre
+      <div className="relative z-10 w-full max-w-md">
+        <h3 className="text-sm font-semibold text-gray-400 mb-4 uppercase tracking-wider">
+          Navigation
+        </h3>
+        <NavigationMenu />
+      </div> */}
+
       {/* Footer */}
-      <div className="absolute bottom-6 left-16 flex items-center space-x-2 text-sm text-gray-500">
-        {/* Logo X SVG */}
+      <div className="relative z-10 flex items-center space-x-2 text-sm text-gray-500">
         <a
           href="https://x.com/indev_ui"
           target="_blank"
@@ -114,7 +120,6 @@ export default function LeftSidebar() {
           </svg>
         </a>
 
-        {/* Nom */}
         <span>
           Built by <span className="font-semibold text-gray-300">Leonel Ngoya</span>
         </span>

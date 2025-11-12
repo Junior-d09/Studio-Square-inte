@@ -25,6 +25,21 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optionnel : personnaliser le scroll-padding-top si vous avez un header fixe */
+html {
+  scroll-padding-top: 6rem; /* 96px */
+}
+
+/* Pour les sections avec ancres, ajouter un offset */
+[id] {
+  scroll-margin-top: 6rem;
+}
+
 body {
   @apply font-inter text-gray-900;
 }
