@@ -13,6 +13,7 @@ export default function RightSidebar() {
       id: 1,
       image: "/images/chat.webp",
       title: "✨ Chat",
+      url: "#",
       description:
         "Project management interface inspired by Linear. Built with Next.js and shadcn/ui.",
       date: "Nov 9, 2025",
@@ -20,7 +21,8 @@ export default function RightSidebar() {
     {
       id: 2,
       image: "/images/emails.png",
-      title: "📧 Emails",
+      title: "✨ Emails",
+      url: "#",
       description:
         "Project management interface inspired by Linear. Built with Next.js and shadcn/ui.",
       date: "Nov 7, 2025",
@@ -28,7 +30,8 @@ export default function RightSidebar() {
     {
       id: 3,
       image: "/images/task-management.webp",
-      title: "📋 Task Management",
+      title: "✨ Task Management",
+      url: "#",
       description:
         "Project management interface inspired by Linear. Built with Next.js and shadcn/ui.",
       date: "Nov 5, 2025",
@@ -36,7 +39,8 @@ export default function RightSidebar() {
     {
       id: 4,
       image: "/images/circle.png",
-      title: "⭕ Circle",
+      title: "✨ Circle",
+      url: "#",
       description:
         "Project management interface inspired by Linear. Built with Next.js and shadcn/ui.",
       date: "Nov 3, 2025",
@@ -58,7 +62,7 @@ export default function RightSidebar() {
             const date = entry.target.getAttribute("data-date");
             // 📍 Position absolue depuis le haut de la page
             const top = rect.top + window.scrollY;
-            
+
             setDates((prev) => {
               const exists = prev.find((d) => d.date === date);
               if (!exists) {
@@ -97,8 +101,20 @@ export default function RightSidebar() {
           </div>
 
           <h3 className="text-sky-400 mb-3 text-2xl font-semibold">
-            {item.title}
+            {item.url ? (
+              <Link
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-sky-300 transition-colors"
+              >
+                {item.title}
+              </Link>
+            ) : (
+              item.title
+            )}
           </h3>
+
           <h6 className="text-gray-400 mb-6 text-base leading-relaxed">
             {item.description}
           </h6>
