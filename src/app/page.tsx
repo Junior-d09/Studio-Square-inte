@@ -62,7 +62,7 @@ export default function HomePage() {
   {/* CENTER + RIGHT - Ajustez la marge gauche pour correspondre */}
   <div className="ml-[40%] flex-1 flex">
     {/* CENTER RULE - Réduisez la largeur ici */}
-    <div className="w-16 flex-shrink-0 relative bg-[#020817]">
+    <div className="w-16 flex-shrink-0 relative bg-[#0A1835]">
       <CenterRule />
     </div>
 

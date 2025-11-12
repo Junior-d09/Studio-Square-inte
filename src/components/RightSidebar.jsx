@@ -90,7 +90,8 @@ export default function RightSidebar() {
             <Image
               src={item.image}
               alt={item.title}
-              fill
+              width={600}
+              height={400}
               className="object-cover rounded-xl"
             />
           </div>

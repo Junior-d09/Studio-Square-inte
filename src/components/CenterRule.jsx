@@ -6,14 +6,14 @@ export default function CenterRule() {
 
   return (
     <div className="relative w-full h-full">
-      {/* Ligne pointillée centrale */}
-      <div className="absolute left-1/2 inset-y-0 border-l border-dashed border-gray-700" />
+      {/* Ligne pointillée déplacée vers la droite */}
+      <div className="absolute left-[95%] inset-y-0 border-l border-dashed border-gray-700 " />
       
       {/* 📅 Affichage des dates au niveau des images */}
       {dates.map(({ date, top }, i) => (
         <div
           key={i}
-          className="absolute left-1/2 -translate-x-1/2 whitespace-nowrap text-sm text-gray-500 font-medium"
+          className="absolute left-[75%] -translate-x-1/2 whitespace-nowrap text-sm text-gray-500 font-medium"
           style={{ top: `${top - 12}px` }}
         >
           {date}
