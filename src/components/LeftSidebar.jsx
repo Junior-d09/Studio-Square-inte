@@ -48,12 +48,12 @@ export default function LeftSidebar() {
               className="object-contain"
             />
           </div>
-          <h1 className="text-2xl font-semibold tracking-tight">Square UI</h1>
+          <h1 className="text-2xl font-bold tracking-tight">Square UI</h1>
         </Link>
 
         {/* Titre principal avec lien souligné */}
         <div>
-          <h2 className="text-4xl font-semibold leading-snug mb-3">
+          <h2 className="text-4xl font-light leading-snug mb-3">
             Open-source layouts <br />
             by{" "}
             <a

@@ -6,25 +6,25 @@ import CenterRule from "@/components/CenterRule";
 export default function HomePage() {
   return (
     <DateProvider>
-     <main className="flex min-h-screen bg-[#020817]">
-  {/* LEFT SIDEBAR - Augmentez le pourcentage ici */}
-  <div className="w-[40%] h-screen fixed left-0 top-0 bg-[#020817] overflow-hidden">
-    <LeftSidebar />
-  </div>
+      <main className="min-h-screen bg-[#020817] flex flex-col md:flex-row">
+        {/* LEFT SIDEBAR - visible sur mobile ET fixe sur desktop */}
+        <div className="w-full md:w-[40%] bg-[#020817] md:fixed md:left-0 md:top-0 md:h-screen overflow-hidden">
+          <LeftSidebar />
+        </div>
 
-  {/* CENTER + RIGHT - Ajustez la marge gauche pour correspondre */}
-  <div className="ml-[40%] flex-1 flex">
-    {/* CENTER RULE - Réduisez la largeur ici */}
-    <div className="w-16 flex-shrink-0 relative bg-[#0A1835]">
-      <CenterRule />
-    </div>
+        {/* CONTENU DROIT */}
+        <div className="flex-1 flex flex-col md:flex-row md:ml-[40%]">
+          {/* LIGNE CENTRALE (visible uniquement sur desktop) */}
+          <div className="hidden md:block w-16 flex-shrink-0 relative bg-[#0A1835]">
+            <CenterRule />
+          </div>
 
-    {/* RIGHT SIDEBAR */}
-    <div className="flex-1 bg-[#020817] overflow-y-auto">
-      <RightSidebar />
-    </div>
-  </div>
-</main>
+          {/* CONTENU PRINCIPAL */}
+          <div className="flex-1 bg-[#020817] overflow-y-auto">
+            <RightSidebar />
+          </div>
+        </div>
+      </main>
     </DateProvider>
   );
 }
