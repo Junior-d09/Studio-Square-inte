@@ -57,6 +57,7 @@ export default function RightSidebar() {
     { name: "Designs", url: "https://countdown-years.netlify.app/" },
   ];
 
+  // --- Observer pour dates ---
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -83,12 +84,12 @@ export default function RightSidebar() {
     return () => observer.disconnect();
   }, [setDates]);
 
+  // --- Gestion du scroll initial / hash ---
   useEffect(() => {
     const handleInitialScroll = () => {
       if (window.location.hash) {
         const hash = window.location.hash.substring(1);
         const element = document.getElementById(hash);
-
         if (element) {
           setTimeout(() => {
             element.scrollIntoView({
@@ -117,57 +118,60 @@ export default function RightSidebar() {
             id={item.anchor}
             ref={(el) => (itemRefs.current[i] = el)}
             data-date={item.date}
-            className="w-full scroll-mt-24"
+            className="w-full scroll-mt-24 flex flex-col items-center"
           >
-            {/* Image */}
-            <div className="relative w-full h-[400px] rounded-xl overflow-hidden mb-6 shadow-2xl border border-gray-800/50">
+            {/* Image centrée */}
+            <div className="relative w-full max-w-[550px] h-[370px] rounded-xl overflow-hidden mb-6 shadow-2xl border border-gray-800/50">
               <Image
                 src={item.image}
                 alt={item.title}
-                width={800}
-                height={400}
+                width={600}
+                height={370}
                 className="object-cover w-full h-full"
               />
             </div>
 
-            <h3 className="text-sky-400 mb-3 text-2xl font-semibold">
-              <Link
-                href={`#${item.anchor}`}
-                className="hover:text-sky-300 transition-colors cursor-pointer"
-                onClick={(e) => {
-                  e.preventDefault();
-                  const element = document.getElementById(item.anchor);
-                  if (element) {
-                    element.scrollIntoView({
-                      behavior: "smooth",
-                      block: "start",
-                    });
-                    window.history.pushState(null, "", `#${item.anchor}`);
-                  }
-                }}
-              >
-                {item.title}
-              </Link>
-            </h3>
+            {/* Texte aligné à gauche */}
+            <div className="w-full max-w-[550px] text-left">
+              <h3 className="text-white mb-3 text-2xl font-semibold">
+                <Link
+                  href={`#${item.anchor}`}
+                  className="transition-colors cursor-pointer"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const element = document.getElementById(item.anchor);
+                    if (element) {
+                      element.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                      });
+                      window.history.pushState(null, "", `#${item.anchor}`);
+                    }
+                  }}
+                >
+                  {item.title}
+                </Link>
+              </h3>
 
-            <p className="text-gray-400 mb-6 text-base leading-relaxed">
-              {item.description}
-            </p>
+              <p className="text-white mb-6 text-normal leading-relaxed">
+                {item.description}
+              </p>
 
-            <ul className="space-y-3 pl-5 list-disc marker:text-sky-400">
-              {socials.map((social) => (
-                <li key={social.name} className="leading-relaxed">
-                  <Link
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sky-400 hover:text-sky-300 transition-colors text-base"
-                  >
-                    {social.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+              <ul className="space-y-3 pl-5 list-disc marker:text-sky-400">
+                {socials.map((social) => (
+                  <li key={social.name} className="leading-relaxed">
+                    <Link
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sky-400 hover:text-blue-50 transition-colors text-base"
+                    >
+                      {social.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         ))}
       </div>

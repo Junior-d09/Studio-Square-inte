@@ -30,7 +30,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Optionnel : personnaliser le scroll-padding-top si vous avez un header fixe */
 html {
   scroll-padding-top: 6rem; /* 96px */
 }
