@@ -15,7 +15,7 @@ export default function HomePage() {
         {/* CONTENU DROIT */}
         <div className="flex-1 flex flex-col md:flex-row md:ml-[40%]">
           {/* LIGNE CENTRALE (visible uniquement sur desktop) */}
-          <div className="hidden md:block w-16 flex-shrink-0 relative bg-[#0A1835]">
+          <div className="hidden md:block w-0 flex-shrink-0 relative bg-[#030919]">
             <CenterRule />
           </div>
 

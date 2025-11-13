@@ -17,7 +17,7 @@ export default function RightSidebar() {
       description:
         "Project management interface inspired by Linear. Built with Next.js and shadcn/ui.",
       date: "Nov 9, 2025",
-      anchor: "chat", //  Ajout de l'ancre
+      anchor: "chat",
     },
     {
       id: 2,
@@ -27,7 +27,7 @@ export default function RightSidebar() {
       description:
         "Project management interface inspired by Linear. Built with Next.js and shadcn/ui.",
       date: "Nov 7, 2025",
-      anchor: "emails", //  Ajout de l'ancre
+      anchor: "emails",
     },
     {
       id: 3,
@@ -37,7 +37,7 @@ export default function RightSidebar() {
       description:
         "Project management interface inspired by Linear. Built with Next.js and shadcn/ui.",
       date: "Nov 5, 2025",
-      anchor: "task-management", //  Ajout de l'ancre
+      anchor: "task-management",
     },
     {
       id: 4,
@@ -47,7 +47,7 @@ export default function RightSidebar() {
       description:
         "Project management interface inspired by Linear. Built with Next.js and shadcn/ui.",
       date: "Nov 3, 2025",
-      anchor: "circle", //  Ajout de l'ancre
+      anchor: "circle",
     },
   ];
 
@@ -83,14 +83,12 @@ export default function RightSidebar() {
     return () => observer.disconnect();
   }, [setDates]);
 
-  //  Nouveau useEffect pour gérer le scroll au chargement
   useEffect(() => {
-    // Attendre que la page soit complètement chargée
     const handleInitialScroll = () => {
       if (window.location.hash) {
         const hash = window.location.hash.substring(1);
         const element = document.getElementById(hash);
-        
+
         if (element) {
           setTimeout(() => {
             element.scrollIntoView({
@@ -102,36 +100,33 @@ export default function RightSidebar() {
       }
     };
 
-    // Exécuter au chargement
     handleInitialScroll();
-
-    // Écouter les changements d'ancre
     window.addEventListener("hashchange", handleInitialScroll);
-    
+
     return () => {
       window.removeEventListener("hashchange", handleInitialScroll);
     };
   }, []);
 
   return (
-    <div className="w-full min-h-screen flex flex-col items-center justify-start px-4 md:px-12 py-12">
-      <div className="w-full max-w-5xl space-y-32">
+    <div className="w-full min-h-screen flex justify-center py-12 px-4">
+      <div className="w-full max-w-2xl flex flex-col space-y-32 pt-12">
         {items.map((item, i) => (
           <div
             key={item.id}
-            id={item.anchor} 
+            id={item.anchor}
             ref={(el) => (itemRefs.current[i] = el)}
             data-date={item.date}
-            className="rounded-2xl p-6 text-left bg-transparent scroll-mt-24" 
+            className="w-full scroll-mt-24"
           >
             {/* Image */}
-            <div className="relative w-full h-[400px] rounded-xl overflow-hidden mb-6 shadow-2xl">
+            <div className="relative w-full h-[400px] rounded-xl overflow-hidden mb-6 shadow-2xl border border-gray-800/50">
               <Image
                 src={item.image}
                 alt={item.title}
-                width={600}
+                width={800}
                 height={400}
-                className="object-cover rounded-xl"
+                className="object-cover w-full h-full"
               />
             </div>
 
@@ -155,9 +150,9 @@ export default function RightSidebar() {
               </Link>
             </h3>
 
-            <h6 className="text-gray-400 mb-6 text-base leading-relaxed">
+            <p className="text-gray-400 mb-6 text-base leading-relaxed">
               {item.description}
-            </h6>
+            </p>
 
             <ul className="space-y-3 pl-5 list-disc marker:text-sky-400">
               {socials.map((social) => (
