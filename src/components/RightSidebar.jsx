@@ -17,7 +17,7 @@ export default function RightSidebar() {
       description:
         "Project management interface inspired by Linear. Built with Next.js and shadcn/ui.",
       date: "Nov 9, 2025",
-      anchor: "chat", // 👈 Ajout de l'ancre
+      anchor: "chat", //  Ajout de l'ancre
     },
     {
       id: 2,
@@ -27,7 +27,7 @@ export default function RightSidebar() {
       description:
         "Project management interface inspired by Linear. Built with Next.js and shadcn/ui.",
       date: "Nov 7, 2025",
-      anchor: "emails", // 👈 Ajout de l'ancre
+      anchor: "emails", //  Ajout de l'ancre
     },
     {
       id: 3,
@@ -37,7 +37,7 @@ export default function RightSidebar() {
       description:
         "Project management interface inspired by Linear. Built with Next.js and shadcn/ui.",
       date: "Nov 5, 2025",
-      anchor: "task-management", // 👈 Ajout de l'ancre
+      anchor: "task-management", //  Ajout de l'ancre
     },
     {
       id: 4,
@@ -47,14 +47,14 @@ export default function RightSidebar() {
       description:
         "Project management interface inspired by Linear. Built with Next.js and shadcn/ui.",
       date: "Nov 3, 2025",
-      anchor: "circle", // 👈 Ajout de l'ancre
+      anchor: "circle", //  Ajout de l'ancre
     },
   ];
 
   const socials = [
     { name: "Live Demo", url: "https://github.com" },
-    { name: "GitHub", url: "https://github.com" },
-    { name: "Designs", url: "#" },
+    { name: "GitHub", url: "https://github.com/Junior-d09" },
+    { name: "Designs", url: "https://countdown-years.netlify.app/" },
   ];
 
   useEffect(() => {
@@ -83,7 +83,7 @@ export default function RightSidebar() {
     return () => observer.disconnect();
   }, [setDates]);
 
-  // 👇 Nouveau useEffect pour gérer le scroll au chargement
+  //  Nouveau useEffect pour gérer le scroll au chargement
   useEffect(() => {
     // Attendre que la page soit complètement chargée
     const handleInitialScroll = () => {
@@ -119,10 +119,10 @@ export default function RightSidebar() {
         {items.map((item, i) => (
           <div
             key={item.id}
-            id={item.anchor} // 👈 Ajout de l'ID pour l'ancre
+            id={item.anchor} 
             ref={(el) => (itemRefs.current[i] = el)}
             data-date={item.date}
-            className="rounded-2xl p-6 text-left bg-transparent scroll-mt-24" // 👈 scroll-mt-24 pour l'offset
+            className="rounded-2xl p-6 text-left bg-transparent scroll-mt-24" 
           >
             {/* Image */}
             <div className="relative w-full h-[400px] rounded-xl overflow-hidden mb-6 shadow-2xl">

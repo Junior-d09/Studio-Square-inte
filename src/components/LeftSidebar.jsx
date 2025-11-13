@@ -6,7 +6,7 @@ import { BookOpen, Github } from "lucide-react";
 
 export default function LeftSidebar() {
   return (
-    <div className="relative h-full flex flex-col justify-between items-center px-8 md:px-16 py-12 text-white overflow-hidden bg-[#020817]">
+    <div className="relative h-full flex flex-col justify-center items-center px-8 md:px-16 py-12 text-white overflow-hidden bg-[#020817]">
       {/* Effet bleu */}
       <div className="absolute top-0 right-0 w-96 h-full bg-gradient-to-l from-blue-500/15 via-blue-600/8 to-transparent pointer-events-none z-[1]" />
 
@@ -94,16 +94,8 @@ export default function LeftSidebar() {
         </div>
       </div>
 
-      {/* 👇 Menu de navigation au centre
-      <div className="relative z-10 w-full max-w-md">
-        <h3 className="text-sm font-semibold text-gray-400 mb-4 uppercase tracking-wider">
-          Navigation
-        </h3>
-        <NavigationMenu />
-      </div> */}
-
       {/* Footer */}
-      <div className="relative z-10 flex items-center space-x-2 text-sm text-gray-500">
+      <div className="absolute bottom-6 z-10 flex items-center space-x-2 text-sm text-gray-500">
         <a
           href="https://x.com/indev_ui"
           target="_blank"
