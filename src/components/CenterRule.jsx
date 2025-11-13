@@ -22,19 +22,27 @@ export default function CenterRule() {
 
   return (
     <div className="relative w-full h-full">
-      {/* Ligne verticale pointillée - centrée dans la colonne */}
-      <div className="absolute left-1/2 -translate-x-1/2 inset-y-0 border-l border-dashed border-gray-700" />
+      {/* Ligne verticale pointillée au centre */}
+      <div className="absolute left-1/2 -translate-x-1/2 inset-y-0 border-l border-dashed border-blue-600" />
 
-      {/* Dates cliquables - positionnées à gauche de la ligne */}
+      {/* Affichage des dates + trait horizontal */}
       {dates.map(({ date, top }, i) => (
-        <button
+        <div
           key={i}
-          onClick={() => handleDateClick(date)}
-          className="absolute left-1/2 -translate-x-full pr-4 whitespace-nowrap text-sm text-gray-500 font-medium hover:text-sky-400 transition-colors cursor-pointer text-right"
-          style={{ top: `${top - 12}px` }}
+          className="absolute flex items-center justify-end left-1/2 -translate-x-full"
+          style={{ top: `${top - 10}px` }}
         >
-          {date}
-        </button>
+          {/* Texte de la date */}
+          <button
+            onClick={() => handleDateClick(date)}
+            className="text-sm text-gray-400 hover:text-sky-400 font-medium transition-colors whitespace-nowrap text-right pr-2"
+          >
+            {date}
+          </button>
+
+          {/* Trait */}
+          <div className="w-4 h-px bg-white" />
+        </div>
       ))}
     </div>
   );

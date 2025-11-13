@@ -110,7 +110,7 @@ export default function RightSidebar() {
   }, []);
 
   return (
-    <div className="w-full min-h-screen flex justify-center py-12 px-4">
+    <div className="w-full min-h-screen flex justify-start py-12 px-4">
       <div className="w-full max-w-2xl flex flex-col space-y-32 pt-12">
         {items.map((item, i) => (
           <div
