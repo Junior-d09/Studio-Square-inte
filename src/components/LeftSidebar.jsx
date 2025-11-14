@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 import { BookOpen, Github } from "lucide-react";
 
@@ -68,23 +69,13 @@ export default function LeftSidebar() {
           className="flex items-center space-x-2 hover:opacity-90 transition"
         >
           <div className="bg-white text-black rounded-md px-2 py-1 shadow flex items-center justify-center">
-            <svg
-              width="28"
-              height="28"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect
-                x="3"
-                y="3"
-                width="18"
-                height="18"
-                rx="2"
-                stroke="currentColor"
-                strokeWidth="2"
-              />
-            </svg>
+            <Image
+              src="/Images/icon.svg"
+              alt="Logo Square UI"
+              width={28}
+              height={28}
+              className="object-contain"
+            />
           </div>
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
             Square UI
