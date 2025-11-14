@@ -49,6 +49,16 @@ export default function RightSidebar() {
       date: "Nov 3, 2025",
       anchor: "circle",
     },
+    {
+      id: 5,
+      image: "/images/fidevo.png",
+      title: "✨ Fidevo",
+      url: "#",
+      description:
+        "The Fidevo is a smartphone that is designed to be a personal assistant. It is equipped with a variety of features, including a voice assistant, a calendar, a to-do list, and a contacts manager. It is also equipped with a built-in camera and microphone, allowing users to take photos and record videos. The Fidevo is available in a range of colors, including black, white, and blue.",
+      date: "Nov 14, 2025",
+      anchor: "fidevo",
+    },
   ];
 
   const socials = [

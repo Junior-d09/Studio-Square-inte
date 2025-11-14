@@ -37,8 +37,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr" className={`${inter.variable} ${monaSans.variable}`}>
-      <body className="font-inter antialiased">{children}</body>
+    <html lang="fr">
+      <body
+        className={`${inter.variable} ${monaSans.variable} font-inter antialiased`}
+      >
+        {children}
+      </body>
     </html>
   );
 }
