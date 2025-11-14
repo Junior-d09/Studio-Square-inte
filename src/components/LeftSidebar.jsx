@@ -4,7 +4,7 @@ import { BookOpen, Github } from "lucide-react";
 
 export default function LeftSidebar() {
   return (
-    <div className="relative h-full flex flex-col justify-between px-6 py-8 md:justify-center md:items-end md:px-8 md:pl-24 md:pr-16 md:py-12 text-white overflow-hidden bg-[#020817]">
+    <div className="relative h-full flex flex-col justify-between px-6 py-8 md:justify-center md:items-end md:px-8 md:pl-24 md:pr-16 md:py-12 text-white overflow-hidden bg-[#020817] gap-8">
       {/* Effet bleu */}
       <div className="absolute top-0 right-0 w-96 h-full bg-gradient-to-l from-blue-500/15 via-blue-600/8 to-transparent pointer-events-none z-[1]" />
 
@@ -83,7 +83,7 @@ export default function LeftSidebar() {
 
         {/* Sous-titre et description */}
         <div className="space-y-3 md:space-y-4">
-          <h2 className="text-2xl md:text-3xl font-light leading-snug">
+          <h2 className="text-4xl md:text-4xl font-light leading-snug">
             Open-source layouts <br />
             by{" "}
             <a
@@ -103,7 +103,7 @@ export default function LeftSidebar() {
         </div>
 
         {/* Liens sociaux */}
-        <div className="flex items-center space-x-6 text-gray-300">
+        <div className="flex items-center justify-center md:justify-start space-x-6 text-gray-300 w-full md:w-auto">
           <a
             href="https://github.com/sponsors/indev-ui"
             target="_blank"
@@ -127,12 +127,12 @@ export default function LeftSidebar() {
       </div>
 
       {/* Footer */}
-      <div className="relative z-10 flex items-center space-x-2 text-xs md:text-sm text-gray-400 md:absolute md:bottom-6 md:right-8 md:left-24">
+      <div className="relative z-10 flex items-center justify-center md:justify-start space-x-2 text-xs md:text-sm text-gray-400 w-full md:w-auto md:absolute md:bottom-6 md:right-8 md:left-24">
         <a
-          href="https://x.com/JuniorDfs09"
+          href="https://x.com/juniordfs09"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center hover:text-blue-300 transition"
+          className="flex items-center hover:text-bue-300 transition"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -142,13 +142,13 @@ export default function LeftSidebar() {
           >
             <path d="M221.95 51.29c.15 2.17.15 4.34.15 6.53 0 66.73-50.8 143.69-143.69 143.69v-.04c-27.44.04-54.31-7.82-77.41-22.64 3.99.48 8 .72 12.02.73 22.74.02 44.83-7.61 62.72-21.66-21.61-.41-40.56-14.5-47.18-35.07 7.57 1.46 15.37 1.16 22.8-.87-23.56-4.76-40.51-25.46-40.51-49.5v-.64c7.02 3.91 14.88 6.08 22.92 6.32C11.58 63.31 4.74 33.79 18.14 10.71c25.64 31.55 63.47 50.73 104.08 52.76-4.07-17.54 1.49-35.92 14.61-48.25 20.34-19.12 52.33-18.14 71.45 2.19 11.31-2.23 22.15-6.38 32.07-12.26-3.77 11.69-11.66 21.62-22.2 27.93 10.01-1.18 19.79-3.86 29-7.95-6.78 10.16-15.32 19.01-25.2 26.16z" />
           </svg>
-      
 
-        <span>
-          Built by{" "}
-          <span className="font-semibold text-gray-300 cursor-pointer">Leonel Ngoya</span>
-        </span>
+          <span>
+            Built by{" "}
+            <span className="font-semibold text-gray-300">Leonel Ngoya</span>
+          </span>
         </a>
+
       </div>
     </div>
   );
