@@ -75,10 +75,20 @@ export default function LeftSidebar() {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="2"/>
+              <rect
+                x="3"
+                y="3"
+                width="18"
+                height="18"
+                rx="2"
+                stroke="currentColor"
+                strokeWidth="2"
+              />
             </svg>
           </div>
-          <h1 className="text-3xl md:text-4xl font-bold tracking-tight">Square UI</h1>
+          <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
+            Square UI
+          </h1>
         </a>
 
         {/* Sous-titre et description */}
@@ -145,10 +155,11 @@ export default function LeftSidebar() {
 
           <span>
             Built by{" "}
-            <span className="font-semibold text-gray-300">Christ-Pio Dofonsou</span>
+            <span className="font-semibold text-gray-300">
+              Christ-Pio Dofonsou
+            </span>
           </span>
         </a>
-
       </div>
     </div>
   );
