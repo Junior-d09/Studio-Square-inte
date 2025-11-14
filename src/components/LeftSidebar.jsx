@@ -145,7 +145,7 @@ export default function LeftSidebar() {
 
           <span>
             Built by{" "}
-            <span className="font-semibold text-gray-300">Leonel Ngoya</span>
+            <span className="font-semibold text-gray-300">Christ-Pio Dofonsou</span>
           </span>
         </a>
 
