@@ -1,12 +1,10 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
 import { BookOpen, Github } from "lucide-react";
 
 export default function LeftSidebar() {
   return (
-    <div className="relative h-full flex flex-col justify-center items-end px-8 md:pl-24 md:pr-16 py-12 text-white overflow-hidden bg-[#020817]">
+    <div className="relative h-full flex flex-col justify-between px-6 py-8 md:justify-center md:items-end md:px-8 md:pl-24 md:pr-16 md:py-12 text-white overflow-hidden bg-[#020817]">
       {/* Effet bleu */}
       <div className="absolute top-0 right-0 w-96 h-full bg-gradient-to-l from-blue-500/15 via-blue-600/8 to-transparent pointer-events-none z-[1]" />
 
@@ -62,28 +60,30 @@ export default function LeftSidebar() {
         </svg>
       </div>
 
-      {/* Contenu principal centré verticalement et aligné à droite */}
-      <div className="relative z-10 flex flex-col items-center md:items-start text-center md:text-left space-y-10 w-full max-w-md">
+      {/* Contenu principal */}
+      <div className="relative z-10 flex flex-col items-start text-left space-y-6 w-full md:space-y-10 md:max-w-md">
         {/* Logo et nom */}
-        <Link
+        <a
           href="/"
-          className="flex items-center space-x-2 hover:opacity-90 transition justify-center md:justify-start w-full"
+          className="flex items-center space-x-2 hover:opacity-90 transition"
         >
           <div className="bg-white text-black rounded-md px-2 py-1 shadow flex items-center justify-center">
-            <Image
-              src="/Images/icon.svg"
-              alt="Logo Square UI"
-              width={28}
-              height={28}
-              className="object-contain"
-            />
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="2"/>
+            </svg>
           </div>
-          <h1 className="text-4xl font-bold tracking-tight">Square UI</h1>
-        </Link>
+          <h1 className="text-3xl md:text-4xl font-bold tracking-tight">Square UI</h1>
+        </a>
 
         {/* Sous-titre et description */}
-        <div className="mt-4">
-          <h2 className="text-3xl font-light leading-snug mb-4">
+        <div className="space-y-3 md:space-y-4">
+          <h2 className="text-2xl md:text-3xl font-light leading-snug">
             Open-source layouts <br />
             by{" "}
             <a
@@ -96,14 +96,14 @@ export default function LeftSidebar() {
             </a>
           </h2>
 
-          <p className="text-gray-400 max-w-md mb-8">
+          <p className="text-gray-400 text-sm md:text-base max-w-md">
             Collection of beautifully crafted open-source layouts UI built with
             shadcn/ui.
           </p>
         </div>
 
         {/* Liens sociaux */}
-        <div className="flex items-center justify-center md:justify-start space-x-6 text-gray-300 w-full">
+        <div className="flex items-center space-x-6 text-gray-300">
           <a
             href="https://github.com/sponsors/indev-ui"
             target="_blank"
@@ -111,7 +111,7 @@ export default function LeftSidebar() {
             className="flex items-center space-x-2 hover:text-white transition"
           >
             <BookOpen size={18} />
-            <span>Sponsor</span>
+            <span className="text-sm md:text-base">Sponsor</span>
           </a>
 
           <a
@@ -121,18 +121,18 @@ export default function LeftSidebar() {
             className="flex items-center space-x-2 hover:text-white transition"
           >
             <Github size={18} />
-            <span>GitHub</span>
+            <span className="text-sm md:text-base">GitHub</span>
           </a>
         </div>
       </div>
 
-      {/* Footer aligné à droite avec plus d'espace à gauche */}
-      <div className="absolute bottom-6 right-8 md:right-16 left-8 md:left-24 z-10 flex justify-center md:justify-end items-center space-x-2 text-sm text-gray-500 max-w-md md:ml-auto">
+      {/* Footer */}
+      <div className="relative z-10 flex items-center space-x-2 text-xs md:text-sm text-gray-400 md:absolute md:bottom-6 md:right-8 md:left-24">
         <a
           href="https://x.com/indev_ui"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center text-gray-400 hover:text-white transition"
+          className="flex items-center hover:text-white transition"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
